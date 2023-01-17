@@ -1,0 +1,157 @@
+/* global */
+.linkButton{
+
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #7aa8b7;
+        border-radius: 6px;
+        outline: none;
+}
+
+.phoneSizeLarge{
+  font-weight:700 ;
+  font-size:1.4em;
+}
+.phoneSizeSmall{
+  font-size:1em;
+}
+/*index*/
+.header{
+  padding-top:13px;
+  padding-bottom:20px;
+  background-color:black;
+  
+}
+
+.postMargin{
+  margin-left:3%;
+  margin-right:3%;
+}
+
+.italic{
+  font-style:italic;
+}
+
+
+.indexTitle{
+  font-size:10px;
+  justify-content:space-evenly;
+  display:flex;
+  color:darkorange;
+  filter:drop-shadow(1.2px 1.2px #AA9D84);
+  cursor:grab;
+}
+
+.listBadge{
+  display:flex;
+  flex-direction:column;
+  font-weight:300;
+  font-size:medium;
+}
+
+
+
+.indexPosts{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+
+/* posts */
+
+.postContents{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.postTitle{
+  margin-top:1%;
+  width:70%;
+  display:flex;
+  flex-direction:column;
+  text-align:center; 
+  align-items:center;
+  border-style:solid;
+  border-width:3px;
+}
+
+.markdownContents{
+  font-size:large;
+  text-align:center;
+  margin-right:1px;
+}
+
+/*editor*/
+
+.centerEditor{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.headerEditor{
+  display:flex;
+  justify-content:space-evenly
+}
+
+/* changeOrder  */
+.centerFlex{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.orderFlexbox{
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  flex-wrap: nowrap;
+  gap:10px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+.indexTitle{
+  font-size:10px;
+  margin-left:30%;
+  margin-right:30%;
+  justify-content:space-evenly;
+  display:flex;
+    display:nowrap;
+  color:darkorange;
+  filter:drop-shadow(1.2px 1.2px #AA9D84);
+  cursor:grab;
+}
+
+
+.postContents{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.postTitle{
+  margin-top:1%;
+  width:50%;
+  display:flex;
+  flex-direction:column;
+  
+  align-items:center;
+  border-style:solid;
+  border-width:3px;
+}
+
+.markdownContents{
+  font-size:large;
+  text-align:center;
+}
+
+
+}

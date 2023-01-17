@@ -5,22 +5,23 @@ import {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Flicker from './components/flicker';
 
 export default function Index({posts,cats}){
-  console.log(cats[0].categories)
   const masterPosts = [...posts]
   const masterCats = cats[0].categories;
   const [filtPosts,setFiltPosts] = useState(posts);
   const [cat,setCat] = useState('');
-  const [filtText,setFiltText] = useState('SORT');
+  const [filtText,setFiltText] = useState('SORT POSTS');
+
 
   
   function changeCat(filt){
     if(filt == 0){
       setFiltPosts(masterPosts);
-      setFiltText('SORT');
+      setFiltText('SORT POSTS');
     }else{
-    setFiltText("RESET")
+    setFiltText("RESET FILTER")
     setFiltPosts(masterPosts.filter(post => post.categories.includes(filt)))
     }
   }
@@ -30,7 +31,15 @@ export default function Index({posts,cats}){
   return(
   <div>
     <Header/>
+    <div style={{marginRight:"3%",marginLeft:"3%"}}>
+        <p/>
+        <h1 style={{textAlign:"center",textDecoration:'underline '}}>TOP STORIES</h1>
+      <Flicker posts={masterPosts} className={'flickerWidth'}/>
+    </div>
+
 <div className={'postMargin'}>
+        <hr/>
+        <h3 style={{textAlign:'center',textDecoration:'underline'}}> ALL POSTS</h3>
   <div className={'sortButton'}>
    <Dropdown as={ButtonGroup} >
       <Button variant="dark" onClick={() => changeCat(0)}>{filtText}</Button>
@@ -44,6 +53,7 @@ export default function Index({posts,cats}){
       </Dropdown.Menu>
     </Dropdown>
     </div>
+        <p>  </p>
       <div className={"indexPosts"}>
         <div>
           <BootList posts ={filtPosts}/>
@@ -72,7 +82,7 @@ export async function getServerSideProps() {
         const posts = await db
             .collection("posts")
             .find({})
-            .sort({order:-1})
+            .sort({order:1})
             .toArray();
     const cat = await db
             .collection('categories')

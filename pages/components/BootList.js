@@ -33,6 +33,7 @@ function BootList(props) {
           {"Tags: "+ post.categories}
                 
         </Badge>
+                
       </div>
       </ListGroup.Item>
         )

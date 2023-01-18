@@ -13,7 +13,7 @@ const inter = Roboto_Serif({subsets: ['latin'],style:['normal','italic']})
 export default function App({ Component, pageProps }) {
   return (
     <UserProvider>
-      <main className={inter.className}>
+      <main className={inter.className }>
       <Component {...pageProps} />
       </main>
     </UserProvider>

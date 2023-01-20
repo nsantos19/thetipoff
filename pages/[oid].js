@@ -17,7 +17,7 @@ export default function ViewPost({post,cat}){
       <div className={'postContents'}>
   <div className={'postTitle'}>
   <h1>{postContents.title}</h1>
-  <h5>tags: {postContent.categories.join('|')}</h5>
+  <h5>tags: {postContents.categories.join('|')}</h5>
           </div>
  <hr style={{borderWidth:"1px",borderColor:"black",borderStyle:"solid",width:"50%"}}/> 
 <div className="markdownContents">

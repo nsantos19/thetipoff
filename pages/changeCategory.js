@@ -49,7 +49,7 @@ export default function EditPost({cat}){
   }
 
   const saveCategories= async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerNewCat',{
+    const res = await fetch('https://tipoffblog.com/api/handlerNewCat',{
       method: 'post',
       body: JSON.stringify({
         categories: categories,

@@ -45,7 +45,7 @@ export default function NewPost({post}){
   },[])
 
   const savePost= async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerNewPost',{
+    const res = await fetch('https://tipoffblog.com/api/handlerNewPost',{
       method: 'post',
       body: JSON.stringify({
         title: title,

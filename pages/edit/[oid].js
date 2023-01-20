@@ -19,7 +19,7 @@ export default function EditPost({post,cat}){
   const router = useRouter();
   const oid = {post}.post[0]._id;
   const [title,setTitle] = useState({post}.post[0].title);
-  const [categories,setCategories] = useState({post}.post[0].categories)
+  const [categories,setCategories] = useState({post}.post[0].categories.filter(cat =>  masterCats.includes(cat)))
   const [body,setBody] = useState({post}.post[0].body)
   const {user,error,isLoading} = useUser();
   const [author,setAuthor] = useState({post}.post[0].author)
@@ -50,7 +50,7 @@ export default function EditPost({post,cat}){
   })
 
   const removePost = async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerRemove',{
+    const res = await fetch('https://tipoffblog.com/api/handlerRemove',{
       method: 'post',
       body: JSON.stringify({
         oid: oid
@@ -59,7 +59,7 @@ export default function EditPost({post,cat}){
     router.back()
   }
   const saveBody = async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerBody',{
+    const res = await fetch('https://tipoffblog.com/api/handlerBody',{
       method: 'post',
       body: JSON.stringify({
         body: body,
@@ -69,7 +69,7 @@ export default function EditPost({post,cat}){
   }
 
   const saveTitle= async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerTitle',{
+    const res = await fetch('https://tipoffblog.com/api/handlerTitle',{
       method: 'post',
       body: JSON.stringify({
         title: title,
@@ -78,7 +78,7 @@ export default function EditPost({post,cat}){
     })
   }
   const saveAuthor= async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerAuthor',{
+    const res = await fetch('https://tipoffblog.com/api/handlerAuthor',{
       method: 'post',
       body: JSON.stringify({
         author: author,
@@ -87,7 +87,7 @@ export default function EditPost({post,cat}){
     })
   }
   const saveCategories= async ()=>{
-    const res = await fetch('http://localhost:3000/api/handlerCategories',{
+    const res = await fetch('https://tipoffblog.com/api/handlerCategories',{
       method: 'post',
       body: JSON.stringify({
         categories: categories,

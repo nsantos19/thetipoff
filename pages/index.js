@@ -1,12 +1,12 @@
 import clientPromise from '../lib/mongodb'
-import BootList from './components/BootList';
-import Header from './components/header';
+import BootList from '../components/BootList';
+import Header from '../components/header';
 import {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Flicker from './components/flicker';
-
+import Flicker from '../components/flicker';
+import Head from 'next/head';
 export default function Index({posts,cats}){
   const masterPosts = [...posts]
   const masterCats = cats[0].categories;
@@ -30,6 +30,9 @@ export default function Index({posts,cats}){
 
   return(
   <div>
+<Head>
+<title> Tipoff Blog </title>
+</Head>
     <Header/>
     <div style={{marginRight:"3%",marginLeft:"3%"}}>
         <p/>
@@ -79,6 +82,7 @@ export async function getServerSideProps() {
     try {
         const client = await clientPromise;
         const db = client.db("blog");
+	    console.log(db);
         const posts = await db
             .collection("posts")
             .find({})

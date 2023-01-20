@@ -7,10 +7,9 @@ import {ObjectId} from 'mongodb'
 import {useRouter} from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import Header from '../pages/components/header.js'
+import Header from '../components/header.js'
 export default function ViewPost({post,cat}){
   const postContents = {post}.post[0] 
-  const masterCats = cat[0].categories;
 
   return(
   <div>
@@ -18,7 +17,7 @@ export default function ViewPost({post,cat}){
       <div className={'postContents'}>
   <div className={'postTitle'}>
   <h1>{postContents.title}</h1>
-  <h5>tags: {masterCats.toString()}</h5>
+  <h5>tags: {postContent.categories.join('|')}</h5>
           </div>
  <hr style={{borderWidth:"1px",borderColor:"black",borderStyle:"solid",width:"50%"}}/> 
 <div className="markdownContents">
@@ -42,12 +41,8 @@ export async function getServerSideProps(context) {
             .collection("posts")
             .find({"_id":objInstance})
             .toArray();
-        const cat = await db
-            .collection('categories')
-            .find({})
-            .toArray();
         return {
-      props: { post: JSON.parse(JSON.stringify(post)),cat: JSON.parse(JSON.stringify(cat)) },
+      props: { post: JSON.parse(JSON.stringify(post)) },
         };
     } catch (e) {
         console.error(e);

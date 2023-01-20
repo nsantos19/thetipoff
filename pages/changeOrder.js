@@ -41,7 +41,7 @@ function orderByDate(){
 }
 
 const sendChangeOrder = async()=>{
-  const res = await fetch('http://localhost:3000/api/handlerChangeOrder',{
+  const res = await fetch('https://tipoffblog.com/api/handlerChangeOrder',{
     method:'post',
     body: JSON.stringify({
       objs:objPosts,

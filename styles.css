@@ -96,12 +96,13 @@ body{
 
 .markdownContents{
   font-size:large;
-  text-align:center;
+max-width:92vw;
   margin-right:1px;
+
 }
 
 .markdownContents img{
-	max-width:99vw;
+	max-width:92vw;
 }
 
 /*editor*/
@@ -151,13 +152,11 @@ body{
   }
 
 .swiper-button-prev{
-    color:orange!important;
-  filter:drop-shadow(1.2px 1.2px #AAAD84);
+visibility:hidden!important;
 
   }
 .swiper-button-next{
-    color:orange!important;
-  filter:drop-shadow(1.2px 1.2px #AAAD84);
+visibility:hidden!important;
   }
 
 
@@ -193,13 +192,11 @@ body{
   }
 
 .swiper-button-prev{
-    color:orange!important;
-  filter:drop-shadow(1.2px 1.2px #AAAD84);
+visibility:hidden!important;
 
   }
 .swiper-button-next{
-    color:orange!important;
-  filter:drop-shadow(1.2px 1.2px #AAAD84);
+visibility:hidden!important;
   }
 
 
@@ -254,11 +251,11 @@ body{
 
 .markdownContents{
   font-size:large;
-  text-align:center;
+max-width: 80vw;
 }
 
 
 .markdownContents img{
-	max-width:99vw;
+	max-width:80vw;
 }
 }

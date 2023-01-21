@@ -30,9 +30,6 @@ export default function Index({posts,cats}){
 
   return(
   <div>
-<Head>
-<title> Tipoff Blog </title>
-</Head>
     <Header/>
     <div style={{marginRight:"3%",marginLeft:"3%"}}>
         <p/>
